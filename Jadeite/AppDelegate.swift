@@ -18,9 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let firstView:ViewController = ViewController()
         navigationController = UINavigationController(rootViewController:firstView)
+        navigationController?.navigationBar.tintColor = Color.hisui
+        navigationController?.navigationBar.barTintColor = UIColor.blackColor()
         self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.BlackOpaque, animated: false)
         return true
     }
 

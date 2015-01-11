@@ -12,19 +12,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.whiteColor()
+        self.navigationItem.titleView = jadeNavBar.titleView("時間割")
+        //self.view.window?.rootViewController
         self.navigationController?.setToolbarHidden(false,animated:false)
+        
+        //上のところ
+        let addObject = UIBarButtonItem(title:Icon.add, style:UIBarButtonItemStyle.Bordered, target:self, action:"toSubjectView:")
+        addObject.setTitleTextAttributes([NSFontAttributeName:UIFont(name:Icon.font,size:Icon.size)!],forState:UIControlState.Normal)
+        self.navigationItem.setRightBarButtonItems(NSArray(arrayLiteral:addObject),animated:true)
+        
         //下のところ
-        navigationController?.toolbar.tintColor = UIColor.blueColor()
-        //let toSubjectViewButton = UIBarButtonItem(title:"\u{E800}",style: UIBarButtonItemStyle.Bordered,target:self,action:"toSubjectView:")
-        let toSubjectViewButton = UIBarButtonItem()
-        toSubjectViewButton.title = "\u{f03a}"
-        toSubjectViewButton.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"FontAwesome",size:20)!],forState:UIControlState.Normal)
-        //([NSFontAttributeName:UIFont(name:"fontawesome-webfont",size:15)],forState:UIControlState.Normal)
-        toSubjectViewButton.target = self
-        toSubjectViewButton.action = "toSubjectView:"
+        navigationController?.toolbar.tintColor = Color.hisui
+        navigationController?.toolbar.barTintColor = UIColor.blackColor()
+        let toSubjectViewButton = UIBarButtonItem(title:Icon.list,style:UIBarButtonItemStyle.Bordered,target:self,action:"toSubjectView:")
+        toSubjectViewButton.setTitleTextAttributes([NSFontAttributeName:UIFont(name:Icon.font,size:Icon.size)!],forState:UIControlState.Normal)
+        let toTimeTableViewButton = UIBarButtonItem(title:Icon.calendar,style:UIBarButtonItemStyle.Bordered,target:self,action:"toTimeTableView:")
+        toTimeTableViewButton.setTitleTextAttributes([NSFontAttributeName:UIFont(name:Icon.font,size:Icon.size)!],forState:UIControlState.Normal)
         let flexibleSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.FlexibleSpace,target: nil,action:nil)
-        self.toolbarItems = NSArray(arrayLiteral:flexibleSpace,toSubjectViewButton)
+        self.toolbarItems = NSArray(arrayLiteral:flexibleSpace,toSubjectViewButton,toTimeTableViewButton)
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,6 +41,10 @@ class ViewController: UIViewController {
     func toSubjectView(button:UIButton){
         let nextView = SubjectView()
         //SecondViewに移動する.
+        self.navigationController?.pushViewController(nextView,animated: true)
+    }
+    func toTimeTableView(button:UIButton){
+        let nextView = TimeTableView()
         self.navigationController?.pushViewController(nextView,animated: true)
     }
 }
