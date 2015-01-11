@@ -14,6 +14,8 @@
 		B5308A9C1A62612A00E2A1E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5308A9B1A62612A00E2A1E7 /* Images.xcassets */; };
 		B5308A9F1A62612A00E2A1E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5308A9D1A62612A00E2A1E7 /* LaunchScreen.xib */; };
 		B5308AAB1A62612A00E2A1E7 /* JadeiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308AAA1A62612A00E2A1E7 /* JadeiteTests.swift */; };
+		B570E5BF1A62660800543E4B /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570E5BE1A62660800543E4B /* SubjectView.swift */; };
+		B570E5C71A6276B500543E4B /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B570E5C61A6276B500543E4B /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		B5308AA41A62612A00E2A1E7 /* JadeiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JadeiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5308AA91A62612A00E2A1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5308AAA1A62612A00E2A1E7 /* JadeiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadeiteTests.swift; sourceTree = "<group>"; };
+		B570E5BE1A62660800543E4B /* SubjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		B570E5C61A6276B500543E4B /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		B5308A8E1A62612A00E2A1E7 /* Jadeite */ = {
 			isa = PBXGroup;
 			children = (
+				B570E5C61A6276B500543E4B /* fontawesome-webfont.ttf */,
 				B5308A911A62612A00E2A1E7 /* AppDelegate.swift */,
 				B5308A961A62612A00E2A1E7 /* ViewController.swift */,
 				B5308A981A62612A00E2A1E7 /* Main.storyboard */,
@@ -86,6 +91,7 @@
 				B5308A9D1A62612A00E2A1E7 /* LaunchScreen.xib */,
 				B5308A931A62612A00E2A1E7 /* Jadeite.xcdatamodeld */,
 				B5308A8F1A62612A00E2A1E7 /* Supporting Files */,
+				B570E5BE1A62660800543E4B /* SubjectView.swift */,
 			);
 			path = Jadeite;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			files = (
 				B5308A9A1A62612A00E2A1E7 /* Main.storyboard in Resources */,
 				B5308A9F1A62612A00E2A1E7 /* LaunchScreen.xib in Resources */,
+				B570E5C71A6276B500543E4B /* fontawesome-webfont.ttf in Resources */,
 				B5308A9C1A62612A00E2A1E7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +225,7 @@
 				B5308A971A62612A00E2A1E7 /* ViewController.swift in Sources */,
 				B5308A951A62612A00E2A1E7 /* Jadeite.xcdatamodeld in Sources */,
 				B5308A921A62612A00E2A1E7 /* AppDelegate.swift in Sources */,
+				B570E5BF1A62660800543E4B /* SubjectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
