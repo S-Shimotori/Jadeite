@@ -9,16 +9,22 @@
 import UIKit
 
 class Size{
-    class Margin{
-        private struct value{
-            static let top:Float = 100
-            static let bottom:Float = 50
+    class TableView{
+        class Margin{
+            struct value{
+                static let left:CGFloat = 15
+            }
+            class var left:CGFloat{
+                get{return Margin.value.left}
+            }
         }
-        class var top:Float{
-            get{return value.top}
+    }
+    class statusBar{
+        class var height:CGFloat{
+            get{return UIApplication.sharedApplication().statusBarFrame.size.height}
         }
-        class var bottom:Float{
-            get{return value.bottom}
+        class var width:CGFloat{
+            get{return UIApplication.sharedApplication().statusBarFrame.size.width}
         }
     }
     

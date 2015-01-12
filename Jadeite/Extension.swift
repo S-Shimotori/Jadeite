@@ -31,9 +31,24 @@ extension UIColor{
     class func kawaColor()->UIColor{
         return hex("475950",alpha:1)
     }
+    class func tsuyukusaColor()->UIColor{
+        return hex("38a1db",alpha:1)
+    }
 }
 
 extension UIViewController{
+    func getNavigationBarHeight()->CGFloat?{
+        return self.navigationController?.toolbar.bounds.height
+    }
+    
+    func getWidth()->CGFloat{
+        return self.view.bounds.width
+    }
+    
+    func getHeight()->CGFloat{
+        return self.view.bounds.height
+    }
+    
     func setTitleView(text:String){
         var titleView = UILabel()
         titleView.textColor = UIColor.hisuiColor()
@@ -42,6 +57,7 @@ extension UIViewController{
         self.navigationItem.titleView = titleView
         self.navigationController?.setToolbarHidden(false,animated:false)
     }
+    
     func setToolBar(buttons:[UIBarButtonItem]){
         self.navigationController?.toolbar.tintColor = UIColor.hisuiColor()
         self.navigationController?.toolbar.barTintColor = UIColor.blackColor()

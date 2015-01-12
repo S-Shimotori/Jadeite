@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubjectView: UIViewController {
+class SubjectView: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     private struct const{
         static let defaultTitle = "No title"
@@ -19,24 +19,43 @@ class SubjectView: UIViewController {
     
     var pageTitle = SubjectView.defaultTitle
     
-    var viewPoint = CGPoint(x:0,y:CGFloat(Size.Margin.top))
+    var viewPoint = CGPoint(x:0,y:CGFloat(Size.statusBar.height))
     func nextViewPoint(point:CGPoint){
             viewPoint.x += point.x
             viewPoint.y += point.y
     }
-
+    
+    let settingSections = ["科目設定","単位設定","授業設定"]
+    let subjectSettings = ["科目名","担当教官名"]
+    let creditSettings = ["単位数","評価","科目分類"]
+    let classSettings = ["授業日","休講日"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         setTitleView(pageTitle)
         
-        let subjectNameLabel = UILabel()
+        nextViewPoint(CGPoint(x:0,y:self.getNavigationBarHeight()!))
+        
+        
+        /*let subjectNameLabel = UILabel()
         subjectNameLabel.text = "科目名"
         nextViewPoint(self.addSubView(subjectNameLabel,point:viewPoint))
         
         let typeNameLabel = UILabel()
         typeNameLabel.text = "種別名"
-        nextViewPoint(self.addSubView(typeNameLabel,point:viewPoint))
+        nextViewPoint(self.addSubView(typeNameLabel,point:viewPoint))*/
+        
+        // TableViewの生成( status barの高さ分ずらして表示 ).
+        let myTableView: UITableView = UITableView(frame:CGRectMake(viewPoint.x,viewPoint.y,getWidth(),getHeight()),style:UITableViewStyle.Grouped)
+        // Cell名の登録をおこなう.
+        myTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
+        // DataSourceの設定をする.
+        myTableView.dataSource = self
+        // Delegateを設定する.
+        myTableView.delegate = self
+        // Viewに追加する.
+        self.view.addSubview(myTableView)
 
         //下のところ
         let toSubjectViewButton = UIBarButtonItem(title:Icon.list,style:UIBarButtonItemStyle.Plain,target:nil,action:nil)
@@ -51,7 +70,85 @@ class SubjectView: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func numberOfSectionsInTableView(tableView: UITableView!)->Int{
+        return settingSections.count
+    }
+
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int)->String?{
+        return settingSections[section]
+    }
     
+    /*
+    Cellが選択された際に呼び出される.
+    */
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+        if indexPath.section == 0 {
+            //println("Value: \(myiPhoneItems[indexPath.row])")
+        } else if indexPath.section == 1 {
+            //println("Value: \(myAndroidItems[indexPath.row])")
+        }
+    }
+    
+    /*
+    テーブルに表示する配列の総数を返す.
+    */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int)->Int{
+        switch section{
+        case 0:
+            return subjectSettings.count
+        case 1:
+            return creditSettings.count
+        case 2:
+            return classSettings.count
+        default:
+            return 0
+        }
+    }
+    
+    /*
+    Cellに値を設定する.
+    */
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)->UITableViewCell{
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("MyCell",forIndexPath:indexPath) as UITableViewCell
+        
+        switch indexPath.section{
+        case 0:
+            cell.textLabel?.text = subjectSettings[indexPath.row]
+        case 1:
+            cell.textLabel?.text = creditSettings[indexPath.row]
+        case 2:
+            cell.textLabel?.text = classSettings[indexPath.row]
+        default:
+            break
+        }
+        cell.textLabel?.sizeToFit()
+        
+        let labelWidth = cell.textLabel?.bounds.width
+        let labelHeight = cell.textLabel?.bounds.height
+
+        let padding = Size.TableView.Margin.left*2+labelWidth!
+        
+        var textField = UITextField(frame:CGRectMake(
+            padding,
+            0,
+            self.getWidth()-padding-Size.TableView.Margin.left,
+            cell.bounds.height))
+        textField.textAlignment = NSTextAlignment.Right
+        //textField.borderStyle = UITextBorderStyle.RoundedRect
+        textField.textColor = UIColor.tsuyukusaColor()
+        textField.delegate = self
+        cell.contentView.addSubview(textField)
+        return cell
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!)->Bool{
+        self.view.endEditing(true)
+        //return true//続けてtextFieldDidEndEditingがはたらく
+        return true
+    }
 
     /*
     // MARK: - Navigation
