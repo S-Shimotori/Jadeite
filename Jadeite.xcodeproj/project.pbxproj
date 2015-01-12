@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51350EA1A63738100BE0374 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51350E91A63738100BE0374 /* Size.swift */; };
 		B5308A921A62612A00E2A1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308A911A62612A00E2A1E7 /* AppDelegate.swift */; };
 		B5308A951A62612A00E2A1E7 /* Jadeite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5308A931A62612A00E2A1E7 /* Jadeite.xcdatamodeld */; };
 		B5308A971A62612A00E2A1E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308A961A62612A00E2A1E7 /* ViewController.swift */; };
@@ -14,12 +15,14 @@
 		B5308A9C1A62612A00E2A1E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5308A9B1A62612A00E2A1E7 /* Images.xcassets */; };
 		B5308A9F1A62612A00E2A1E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5308A9D1A62612A00E2A1E7 /* LaunchScreen.xib */; };
 		B5308AAB1A62612A00E2A1E7 /* JadeiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308AAA1A62612A00E2A1E7 /* JadeiteTests.swift */; };
-		B570E5BF1A62660800543E4B /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570E5BE1A62660800543E4B /* SubjectView.swift */; };
 		B570E5C71A6276B500543E4B /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B570E5C61A6276B500543E4B /* fontawesome-webfont.ttf */; };
 		B570E5C91A627B6A00543E4B /* TimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570E5C81A627B6A00543E4B /* TimeTableView.swift */; };
 		B570E5CB1A628EEF00543E4B /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570E5CA1A628EEF00543E4B /* Icon.swift */; };
-		B5EE39001A6292720095A895 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE38FF1A6292720095A895 /* Color.swift */; };
-		B5EE39021A62977B0095A895 /* jadeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE39011A62977B0095A895 /* jadeNavBar.swift */; };
+		B59F3B411A62B6E000BE2085 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F3B401A62B6E000BE2085 /* SubjectView.swift */; };
+		B59F3B431A62B81D00BE2085 /* Brown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F3B421A62B81D00BE2085 /* Brown.swift */; };
+		B59F3B451A62B83B00BE2085 /* Hisui.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F3B441A62B83B00BE2085 /* Hisui.swift */; };
+		B5EE39001A6292720095A895 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE38FF1A6292720095A895 /* Extension.swift */; };
+		B5EE39021A62977B0095A895 /* JadeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE39011A62977B0095A895 /* JadeBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B51350E91A63738100BE0374 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		B5308A8C1A62612A00E2A1E7 /* Jadeite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jadeite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5308A901A62612A00E2A1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5308A911A62612A00E2A1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,12 +48,14 @@
 		B5308AA41A62612A00E2A1E7 /* JadeiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JadeiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5308AA91A62612A00E2A1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5308AAA1A62612A00E2A1E7 /* JadeiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadeiteTests.swift; sourceTree = "<group>"; };
-		B570E5BE1A62660800543E4B /* SubjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
 		B570E5C61A6276B500543E4B /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		B570E5C81A627B6A00543E4B /* TimeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableView.swift; sourceTree = "<group>"; };
 		B570E5CA1A628EEF00543E4B /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		B5EE38FF1A6292720095A895 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		B5EE39011A62977B0095A895 /* jadeNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jadeNavBar.swift; sourceTree = "<group>"; };
+		B59F3B401A62B6E000BE2085 /* SubjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		B59F3B421A62B81D00BE2085 /* Brown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brown.swift; sourceTree = "<group>"; };
+		B59F3B441A62B83B00BE2085 /* Hisui.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hisui.swift; sourceTree = "<group>"; };
+		B5EE38FF1A6292720095A895 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B5EE39011A62977B0095A895 /* JadeBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JadeBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +105,14 @@
 				B5308A9D1A62612A00E2A1E7 /* LaunchScreen.xib */,
 				B5308A931A62612A00E2A1E7 /* Jadeite.xcdatamodeld */,
 				B5308A8F1A62612A00E2A1E7 /* Supporting Files */,
-				B570E5BE1A62660800543E4B /* SubjectView.swift */,
 				B570E5C81A627B6A00543E4B /* TimeTableView.swift */,
 				B570E5CA1A628EEF00543E4B /* Icon.swift */,
-				B5EE38FF1A6292720095A895 /* Color.swift */,
-				B5EE39011A62977B0095A895 /* jadeNavBar.swift */,
+				B5EE38FF1A6292720095A895 /* Extension.swift */,
+				B5EE39011A62977B0095A895 /* JadeBar.swift */,
+				B59F3B401A62B6E000BE2085 /* SubjectView.swift */,
+				B59F3B421A62B81D00BE2085 /* Brown.swift */,
+				B59F3B441A62B83B00BE2085 /* Hisui.swift */,
+				B51350E91A63738100BE0374 /* Size.swift */,
 			);
 			path = Jadeite;
 			sourceTree = "<group>";
@@ -235,13 +244,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5308A971A62612A00E2A1E7 /* ViewController.swift in Sources */,
-				B5EE39021A62977B0095A895 /* jadeNavBar.swift in Sources */,
+				B5EE39021A62977B0095A895 /* JadeBar.swift in Sources */,
 				B5308A951A62612A00E2A1E7 /* Jadeite.xcdatamodeld in Sources */,
-				B5EE39001A6292720095A895 /* Color.swift in Sources */,
+				B5EE39001A6292720095A895 /* Extension.swift in Sources */,
 				B5308A921A62612A00E2A1E7 /* AppDelegate.swift in Sources */,
 				B570E5C91A627B6A00543E4B /* TimeTableView.swift in Sources */,
-				B570E5BF1A62660800543E4B /* SubjectView.swift in Sources */,
+				B59F3B451A62B83B00BE2085 /* Hisui.swift in Sources */,
 				B570E5CB1A628EEF00543E4B /* Icon.swift in Sources */,
+				B59F3B431A62B81D00BE2085 /* Brown.swift in Sources */,
+				B59F3B411A62B6E000BE2085 /* SubjectView.swift in Sources */,
+				B51350EA1A63738100BE0374 /* Size.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

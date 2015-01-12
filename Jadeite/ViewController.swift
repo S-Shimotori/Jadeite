@@ -13,9 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        self.navigationItem.titleView = jadeNavBar.titleView("時間割")
-        //self.view.window?.rootViewController
-        self.navigationController?.setToolbarHidden(false,animated:false)
+        setTitleView("時間割")
         
         //上のところ
         let addObject = UIBarButtonItem(title:Icon.add, style:UIBarButtonItemStyle.Bordered, target:self, action:"toSubjectView:")
@@ -23,14 +21,10 @@ class ViewController: UIViewController {
         self.navigationItem.setRightBarButtonItems(NSArray(arrayLiteral:addObject),animated:true)
         
         //下のところ
-        navigationController?.toolbar.tintColor = Color.hisui
-        navigationController?.toolbar.barTintColor = UIColor.blackColor()
         let toSubjectViewButton = UIBarButtonItem(title:Icon.list,style:UIBarButtonItemStyle.Bordered,target:self,action:"toSubjectView:")
-        toSubjectViewButton.setTitleTextAttributes([NSFontAttributeName:UIFont(name:Icon.font,size:Icon.size)!],forState:UIControlState.Normal)
         let toTimeTableViewButton = UIBarButtonItem(title:Icon.calendar,style:UIBarButtonItemStyle.Bordered,target:self,action:"toTimeTableView:")
-        toTimeTableViewButton.setTitleTextAttributes([NSFontAttributeName:UIFont(name:Icon.font,size:Icon.size)!],forState:UIControlState.Normal)
         let flexibleSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.FlexibleSpace,target: nil,action:nil)
-        self.toolbarItems = NSArray(arrayLiteral:flexibleSpace,toSubjectViewButton,toTimeTableViewButton)
+        setToolBar([flexibleSpace,toSubjectViewButton,toTimeTableViewButton])
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,6 +36,7 @@ class ViewController: UIViewController {
         let nextView = SubjectView()
         //SecondViewに移動する.
         self.navigationController?.pushViewController(nextView,animated: true)
+
     }
     func toTimeTableView(button:UIButton){
         let nextView = TimeTableView()

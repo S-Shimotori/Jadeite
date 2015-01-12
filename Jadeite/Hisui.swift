@@ -1,5 +1,5 @@
 //
-//  TimeTableView.swift
+//  Hisui.swift
 //  Jadeite
 //
 //  Created by Shigure Shimotori on 1/11/15.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class TimeTableView: UIViewController {
+class Hisui: UIViewController,UISplitViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
-        
-        setTitleView("hoge")
+        self.view.backgroundColor = UIColor.hisuiColor()
         // Do any additional setup after loading the view.
     }
 

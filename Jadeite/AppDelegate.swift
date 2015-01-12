@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let firstView:ViewController = ViewController()
         navigationController = UINavigationController(rootViewController:firstView)
-        navigationController?.navigationBar.tintColor = Color.hisui
+        navigationController?.navigationBar.tintColor = UIColor.hisuiColor()
         navigationController?.navigationBar.barTintColor = UIColor.blackColor()
         self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
         self.window?.rootViewController = navigationController
@@ -113,6 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+
 
 }
 

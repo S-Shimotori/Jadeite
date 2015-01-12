@@ -1,5 +1,5 @@
 //
-//  TimeTableView.swift
+//  Brown.swift
 //  Jadeite
 //
 //  Created by Shigure Shimotori on 1/11/15.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class TimeTableView: UIViewController {
+class Brown: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
-        
-        setTitleView("hoge")
+        self.view.backgroundColor = UIColor.brownColor()
+
         // Do any additional setup after loading the view.
     }
 
