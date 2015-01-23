@@ -48,6 +48,9 @@ class SubjectView: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         // TableViewの生成( status barの高さ分ずらして表示 ).
         let myTableView: UITableView = UITableView(frame:CGRectMake(viewPoint.x,viewPoint.y,getWidth(),getHeight()),style:UITableViewStyle.Grouped)
+        myTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
+      
+        
         // Cell名の登録をおこなう.
         myTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
         // DataSourceの設定をする.
@@ -56,7 +59,13 @@ class SubjectView: UIViewController, UITableViewDelegate, UITableViewDataSource,
         myTableView.delegate = self
         // Viewに追加する.
         self.view.addSubview(myTableView)
-
+        
+        let leftConstraint = NSLayoutConstraint(item:myTableView,attribute:NSLayoutAttribute.Left,relatedBy:NSLayoutRelation.Equal,toItem:self.view,attribute:NSLayoutAttribute.Left,multiplier:1,constant:0)
+        let topConstraint = NSLayoutConstraint(item:myTableView,attribute:NSLayoutAttribute.Top,relatedBy:NSLayoutRelation.Equal,toItem:self.view,attribute:NSLayoutAttribute.Top,multiplier:1,constant:Size.statusBar.height)
+        let rightConstraint = NSLayoutConstraint(item:myTableView,attribute:NSLayoutAttribute.Right,relatedBy:NSLayoutRelation.Equal,toItem:self.view,attribute:NSLayoutAttribute.Right,multiplier:1,constant:0)
+        let bottomConstraint = NSLayoutConstraint(item:myTableView,attribute:NSLayoutAttribute.Bottom,relatedBy:NSLayoutRelation.Equal,toItem:self.view,attribute:NSLayoutAttribute.Bottom,multiplier:1,constant:0)
+        self.view.addConstraints([leftConstraint,topConstraint,rightConstraint,bottomConstraint])
+        
         //下のところ
         let toSubjectViewButton = UIBarButtonItem(title:Icon.list,style:UIBarButtonItemStyle.Plain,target:nil,action:nil)
         toSubjectViewButton.setTitleTextAttributes([NSFontAttributeName:UIFont(name:Icon.font,size:Icon.size)!],forState:UIControlState.Normal)
@@ -131,16 +140,19 @@ class SubjectView: UIViewController, UITableViewDelegate, UITableViewDataSource,
 
         let padding = Size.TableView.Margin.left*2+labelWidth!
         
-        var textField = UITextField(frame:CGRectMake(
-            padding,
-            0,
-            self.getWidth()-padding-Size.TableView.Margin.left,
-            cell.bounds.height))
-        textField.textAlignment = NSTextAlignment.Right
-        //textField.borderStyle = UITextBorderStyle.RoundedRect
+        var textField = UITextField()
+        textField.setTranslatesAutoresizingMaskIntoConstraints(false)
+        textField.borderStyle = UITextBorderStyle.RoundedRect
         textField.textColor = UIColor.tsuyukusaColor()
         textField.delegate = self
         cell.contentView.addSubview(textField)
+        
+        let views = ["textField":textField]
+        
+        var constraints = NSLayoutConstraint.constraintsWithVisualFormat("|-100-[textField]-50-|",options:NSLayoutFormatOptions.AlignAllTop, metrics:nil,views:views)
+        constraints.append(NSLayoutConstraint(item:textField,attribute:NSLayoutAttribute.Top,relatedBy:NSLayoutRelation.Equal,toItem:cell.contentView,attribute:NSLayoutAttribute.Top,multiplier:1,constant:0))
+        constraints.append(NSLayoutConstraint(item:textField,attribute:NSLayoutAttribute.Bottom,relatedBy:NSLayoutRelation.Equal,toItem:cell.contentView,attribute:NSLayoutAttribute.Bottom,multiplier:1,constant:0))
+        cell.contentView.addConstraints(constraints)
         return cell
     }
     
