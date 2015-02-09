@@ -42,11 +42,11 @@ extension UIViewController{
     }
     
     func getWidth()->CGFloat{
-        return self.view.bounds.width
+        return CGRectGetWidth(self.view.bounds)
     }
     
     func getHeight()->CGFloat{
-        return self.view.bounds.height
+        return CGRectGetHeight(self.view.bounds)
     }
     
     func setTitleView(text:String){
