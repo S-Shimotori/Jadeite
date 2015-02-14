@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         setTitleView("時間割")
         
+        println(getHeight())
+        println(getWidth())
+        
         //上のところ
         let addObject = UIBarButtonItem(title:Icon.add, style:UIBarButtonItemStyle.Bordered, target:self, action:"toSubjectView:")
         addObject.setTitleTextAttributes([NSFontAttributeName:UIFont(name:Icon.font,size:Icon.size)!],forState:UIControlState.Normal)

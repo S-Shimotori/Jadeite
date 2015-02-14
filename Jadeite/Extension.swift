@@ -43,10 +43,12 @@ extension UIViewController{
     
     func getWidth()->CGFloat{
         return CGRectGetWidth(self.view.bounds)
+        //return UIScreen.mainScreen().bounds.size.width
     }
     
     func getHeight()->CGFloat{
         return CGRectGetHeight(self.view.bounds)
+        //return UIScreen.mainScreen().bounds.size.height
     }
     
     func setTitleView(text:String){
